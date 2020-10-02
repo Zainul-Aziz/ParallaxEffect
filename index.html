@@ -1,50 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Parallax SITE</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div class="container1">
-        <div class="p1">
-            <h1>Developed By Zainul Aziz</h1>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Parallax | Site</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cookie&family=Tangerine:wght@700&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  </head>
+  <body onload="func()">
+    <div class="container1">
+      <div class="p1">
+        <h1 id="msg">Motivational Quotes</h1>
+      </div>
     </div>
     <section class="section1">
-        <h2>Section one</h2>
-        <p>"Sometimes you have to take a leap of faith first,the trust part comes later."</p>
+      <h2>Quote one</h2>
+      <p id="quote1"></p>
+      <h3 id="auth1"></h3>
     </section>
 
     <div class="container2">
-        <div class="p2">
-
-        </div>
-
+      <div class="p2"></div>
     </div>
     <section class="section2">
-        <h2>Section 2</h2>
-        <p>"No matter where you go in life there's always going to be the one person that wants to bring you down, so stay strong and face your problems instead of running away."</p>
+      <h2>Quote Two</h2>
+      <p id="quote2"></p>
+      <h3 id="auth2"></h3>
     </section>
 
     <div class="container3">
-        <div class="p3">
-
-        </div>
-
+      <div class="p3"></div>
     </div>
     <section class="section3">
-        <h2>Section Three</h2>
-        <p>"So many of our dreams seem impossible, they seem improbable, and then, when we summon the will they soon become inevitable."
-user uploaded image</p>
+      <h2>Quote Three</h2>
+      <p id="quote3"></p>
+      <h3 id="auth3"></h3>
     </section>
     <div class="container1">
-        <div class="p1">
-
-        </div>
-
+      <div class="p1"><h1 id="msg">Thank You!!</h1></div>
     </div>
-</body>
+
+    <script>
+      fetch("https://type.fit/api/quotes")
+        .then(function (res) {
+          return res.json();
+        })
+        .then(function (data) {
+          let rand1 = Math.floor(Math.random() * (1000 - 1) + 1);
+          let rand2 = Math.floor(Math.random() * (1000 - 1) + 1);
+          100;
+          let rand3 = Math.floor(Math.random() * (1000 - 1) + 1);
+          var q1 = (document.getElementById("quote1").innerHTML =
+            data[rand1].text);
+          var a1 = (document.getElementById("auth1").innerHTML =
+            "-" + data[rand1].author);
+          var q2 = (document.getElementById("quote2").innerHTML =
+            data[rand2].text);
+          var a2 = (document.getElementById("auth2").innerHTML =
+            "-" + data[rand2].author);
+          var q3 = (document.getElementById("quote3").innerHTML =
+            data[rand3].text);
+          var a3 = (document.getElementById("auth3").innerHTML =
+            "-" + data[rand3].author);
+        });
+    </script>
+  </body>
 </html>
