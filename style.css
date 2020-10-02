@@ -1,53 +1,65 @@
-html,body
-{
-    height: 100%;
-    margin: 0;
-    font-size: 18px;
-    font-weight: 500;
-    line-height: 2rem;
-    color: #666;
+html,
+body {
+  height: 100%;
+  margin: 0;
+  line-height: 2rem;
+  color: #666;
+}
+section {
+  font-weight: 550;
+  font-size: 45px !important;
+  font-family: "Tangerine", cursive;
+}
+.container1,
+.container2,
+.container3 {
+  position: relative;
+  opacity: 0.9;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  font-size: 2rem;
+  font-family: "Tangerine", cursive;
+}
+.container1 {
+  background-image: url(images/img1.jpg);
+  min-height: 100%;
+}
+.container2 {
+  background-image: url(images/img2.jpg);
+  min-height: 500px;
+}
+.container3 {
+  background-image: url(images/img3.jpg);
+  min-height: 500px;
+}
+.section1,
+.section2,
+.section3 {
+  font-size: 20px;
+  height: 350px;
+  padding: 40px 20px 40px 20px;
+  text-align: center;
+  background-color: rgb(241, 235, 235);
 }
 
-.container1, .container2, .container3
-{
-    position: relative;
-    opacity: 0.9;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-attachment: fixed;
-}
-.container1
-{
-    background-image: url(images/img1.jpg);
-    min-height: 100%;
-}
-.container2
-{
-    background-image: url(images/img2.jpg);
-    min-height: 500px;
-}
-.container3
-{
-    background-image: url(images/img3.jpg);
-    min-height: 500px;
-}
-.section1,.section2,.section3
-{
-    font-size: 20px;
-    height:300px;
-    padding: 40px 20px 40px 20px;
-    text-align: center;
-    background-color: rgb(241, 235, 235);
+.p1 {
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: rgb(141, 139, 139);
+  font-size: 3rem !important;
+  line-height: 3rem;
 }
 
-.p1
-{
-    position: absolute;
-    top: 20%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    color: rgb(141, 139, 139);
-    font-size: 25px;
-    line-height: 3rem;
+@media (max-width: 550px) {
+  section {
+    font-size: 30px !important;
+  }
+}
+
+#msg {
+  font-size: 5rem;
 }
